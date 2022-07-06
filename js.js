@@ -20,14 +20,8 @@ function task1() {
 
 function task2() {
     function removeNegativeElements(array) {
-        let arrOfNegativeValues = [];
-        array.forEach(function (item) {
-            if (item < 0 && typeof item !== 'string') {
-                arrOfNegativeValues.push(item);
-            }
-        });
-        return arrOfNegativeValues = array.filter(x => !arrOfNegativeValues.includes(x));
-    }
+        return array.filter(function(item) {return item >= 0 || typeof item === 'string'})
+       }
 
     let result1 = removeNegativeElements([-9, 2, 3, 0, -28, 'value']);
     console.log(result1);
@@ -41,18 +35,10 @@ function task2() {
 
 function task3() {
     function getStringElements(array) {
-        let arrString = [];
-        array.forEach(function (item) {
-            if (typeof item === 'string') {
-                arrString.push(item);
-            }
-        });
-        return arrString;
+        return array.filter(function(item){ return typeof item === 'string'});
     }
-
-    let arr = [1, true, 42, "red", 64, "green", "web", new Date(), -898, false]
-    let result = getStringElements(arr);
-    console.log(result);
+    let arr = [1, true, 42, "red", 64, "green", "web", new Date(), -898, false];
+    console.log(getStringElements(arr));
 }
 
 function task4() {
